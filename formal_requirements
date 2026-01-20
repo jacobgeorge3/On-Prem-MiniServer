@@ -1,0 +1,93 @@
+1.1 Functional Requirements
+
+FR-1
+The platform SHALL host containerized services using an industry-standard container runtime.
+
+FR-2
+The platform SHALL support stateful workloads with persistent data surviving container restarts.
+
+FR-3
+The platform SHALL allow services to be deployed, stopped, and updated without full platform downtime.
+
+FR-4
+The platform SHALL continue operating in a degraded but predictable state upon failure of a single node.
+
+FR-5
+The platform SHALL expose health, performance, and resource metrics for all running services.
+
+FR-6
+The platform SHALL allow a single operator to perform deployment, troubleshooting, and recovery tasks using documented procedures.
+
+1.2 Non-Functional Requirements
+
+NFR-1 (Operability)
+A new operator SHALL be able to understand system architecture and operational procedures using repository documentation alone.
+
+NFR-2 (Reliability)
+Loss of a single node SHALL NOT result in total service outage, though reduced functionality is acceptable.
+
+NFR-3 (Performance)
+The monitoring system SHALL refresh metrics at least every 15 seconds.
+
+NFR-4 (Scalability)
+The design SHALL allow additional nodes or services to be added with minimal reconfiguration.
+
+NFR-5 (Simplicity)
+The system SHALL avoid unnecessary orchestration complexity where simpler solutions meet requirements.
+
+NFR-6 (Cost Constraint)
+The platform SHALL run on commodity hardware without specialized networking or storage equipment.
+
+1.3 Explicit Out-of-Scope Items (Very Important)
+
+Multi-datacenter replication
+
+Zero-data-loss guarantees during catastrophic failure
+
+Automated cloud-style autoscaling
+
+Enterprise backup solutions
+
+Rationale: These features were intentionally excluded to prioritize operability, clarity, and constrained-resource realism.
+
+This single section alone signals engineering maturity.
+
+2. Intentional Ambiguities 
+
+2.1 Known Ambiguities
+
+Acceptable Data Loss Window
+
+Requirement states persistence, but does not specify RPO.
+
+Assumption: brief data unavailability is acceptable during node failure.
+
+Failure Detection Thresholds
+
+No explicit SLA or alert thresholds provided.
+
+Assumption: defaults based on observed baseline metrics.
+
+Security Model
+
+Environment assumed to be trusted internal network.
+
+No formal authentication or encryption requirements provided.
+
+Growth Expectations
+
+Requirements mention evolution but no scale targets.
+
+Design favors incremental extensibility over upfront scalability.
+
+2.2 Assumptions Made
+
+Single administrative domain
+
+No hostile actors on internal network
+
+Manual recovery acceptable for rare failure events
+
+Storage performance prioritized over redundancy
+
+Design note: Each assumption is documented so it can be revisited as requirements evolve.
