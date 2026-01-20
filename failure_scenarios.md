@@ -168,3 +168,9 @@ Detection Method:
 Impact:
 Resolution:
 Preventive Actions:
+
+## Validation Coverage Summary
+
+All failure scenarios map to one or more functional or non-functional requirements.
+Core reliability, operability, observability, and degradation requirements are explicitly validated through controlled fault injection.
+
