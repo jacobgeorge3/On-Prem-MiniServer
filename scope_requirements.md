@@ -1,3 +1,7 @@
+## Purpose
+
+This document captures stakeholder-provided verbal requirements and maps them to formal, testable system requirements to ensure traceability throughout design and implementation.
+
 Verbal Requirements (As Provided by Stakeholder)
 
 ---VR-1---
